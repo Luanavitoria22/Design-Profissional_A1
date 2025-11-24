@@ -9,6 +9,7 @@ Aqui você encontrará aplicações, estudos e experimentos que desenvolvi nas �
 - Ferramentas: Git e VS Code
 
 🧩 Conteúdo dos Projetórios
+
 🔹 Desenvolvimento Web
 
 Websites completos
