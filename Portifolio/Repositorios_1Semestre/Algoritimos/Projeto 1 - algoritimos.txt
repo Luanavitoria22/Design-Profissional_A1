@@ -1,0 +1,109 @@
+#include <stdio.h>
+
+// Função para calcular a média
+float calcularMedia(float notas[], int quantidade) {
+    float soma = 0;
+    for (int i = 0; i < quantidade; i++) {
+        soma += notas[i];
+    }
+    return soma / quantidade;
+}
+
+// Função para encontrar a maior nota
+float maiorNota(float notas[], int quantidade) {
+    float maior = notas[0];
+    for (int i = 1; i < quantidade; i++) {
+        if (notas[i] > maior) {
+            maior = notas[i];
+        }
+    }
+    return maior;
+}
+
+// Função para encontrar a menor nota
+float menorNota(float notas[], int quantidade) {
+    float menor = notas[0];
+    for (int i = 1; i < quantidade; i++) {
+        if (notas[i] < menor) {
+            menor = notas[i];
+        }
+    }
+    return menor;
+}
+
+int main() {
+
+    float notas[100];
+    int quantidade = 0;
+    float nota;
+    char opcao;
+
+    // Cadastro das notas
+    do {
+        printf("Digite uma nota (0 a 10): ");
+        scanf("%f", &nota);
+
+        if (nota < 0 || nota > 10) {
+            printf("Erro: nota invalida! Insira um valor entre 0 e 10.\n");
+        } else {
+            notas[quantidade] = nota;
+            quantidade++;
+            printf("Nota registrada: %.2f\n", nota);
+        }
+
+        printf("Deseja inserir outra nota? (s/n): ");
+        scanf(" %c", &opcao);
+
+    } while ((opcao == 's' || opcao == 'S') && quantidade < 100);
+
+    // Verificar se existe pelo menos 1 nota
+    if (quantidade == 0) {
+        printf("Nenhuma nota valida foi cadastrada.\n");
+        return 0;
+    }
+
+    // Menu de opções Estatisticas
+    int escolha;
+
+    do {
+        printf("\n***** MENU DE OPÇÔES *****\n");
+        printf("1 - Calcular média\n");
+        printf("2 - Exibir maior nota\n");
+        printf("3 - Exibir menor nota\n");
+        printf("4 - Exibir todas as notas cadastradas\n");
+        printf("0 - Sair\n");
+        printf("Escolha uma das opções acima(digite o numero correspondente a opção): ");
+        scanf("%d", &escolha);
+
+        switch (escolha) {
+            case 1:
+                printf("A Média é: %.2f\n", calcularMedia(notas, quantidade));
+                break;
+
+            case 2:
+                printf("A Maior nota é: %.2f\n", maiorNota(notas, quantidade));
+                break;
+
+            case 3:
+                printf("A Menor nota é: %.2f\n", menorNota(notas, quantidade));
+                break;
+
+            case 4:
+                printf("\nTotal de notas cadastradas:\n");
+                for (int i = 0; i < quantidade; i++) {
+                    printf("Nota %d: %.2f\n", i + 1, notas[i]);
+                }
+                break;
+
+            case 0:
+                printf("Encerrando...\n");
+                break;
+
+            default:
+                printf("Opcao invalida!\n");
+        }
+
+    } while (escolha != 0);
+
+    return 0;
+}

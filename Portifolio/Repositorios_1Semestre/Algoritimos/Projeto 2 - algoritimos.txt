@@ -1,0 +1,62 @@
+#include <stdio.h>
+
+int main() {
+
+    float notas[100];   // Vetor para armazenar até 100 notas
+    int quantidade = 0; // Quantas notas foram cadastradas
+    float nota;
+    char opcao;
+
+    do {
+        printf("Digite uma nota (0 a 10): ");
+        scanf("%f", &nota);
+
+        if (nota < 0 || nota > 10) {
+            printf("Erro: nota invalida! Insira um valor entre 0 e 10.\n");
+        } else {
+            // Armazena a nota
+            notas[quantidade] = nota;
+            quantidade++;
+
+            printf("Nota registrada: %.2f\n", nota);
+        }
+
+        printf("Deseja inserir outra nota? (s/n): ");
+        scanf(" %c", &opcao);
+
+    } while ((opcao == 's' || opcao == 'S') && quantidade < 100);
+
+    // Exibir todas as notas cadastradas
+    printf("\nNotas cadastradas:\n");
+    for (int i = 0; i < quantidade; i++) {
+        printf("Nota %d: %.2f\n", i + 1, notas[i]);
+    }
+
+    // Cálculo da média
+    float soma = 0;
+    for (int i = 0; i < quantidade; i++) {
+        soma += notas[i];
+    }
+    float media = soma / quantidade;
+
+    // Encontrar maior e menor nota
+    float maior = notas[0];
+    float menor = notas[0];
+
+    for (int i = 1; i < quantidade; i++) {
+        if (notas[i] > maior) {
+            maior = notas[i];
+        }
+        if (notas[i] < menor) {
+            menor = notas[i];
+        }
+    }
+
+    // Mostrar resultados
+    printf("\n--- Resultado ---\n");
+    printf("Média: %.2f\n", media);
+    printf("Maior nota: %.2f\n", maior);
+    printf("Menor nota: %.2f\n", menor);
+
+    return 0;
+}
