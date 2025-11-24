@@ -1,6 +1,12 @@
 Olá, seja bem-vindo(a) ao meu portfólio completo de projetos!
 Aqui você encontrará aplicações, estudos e experimentos que desenvolvi nas áreas de programação, web design e  bancos de dados, com foco em aprendizado contínuo e soluções criativas.
 
+📚 Projetos Desenvolvidos nesse repositorio:
+1. Loja Virtual
+2. Portfólio com Currículo
+3. Site de Evento Tecnologico
+4. Forest Fire Detection(Banco de Dados)
+
 🚀 Tecnologias Utilizadas
 
 - HTML5, CSS3, JavaScript
