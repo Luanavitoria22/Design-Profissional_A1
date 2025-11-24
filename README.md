@@ -4,7 +4,7 @@ Aqui você encontrará aplicações, estudos e experimentos que desenvolvi nas �
 🚀 Tecnologias Utilizadas
 
 - HTML5, CSS3, JavaScript
-- Banco de Dados: MySQL, PostgreSQL, MongoDB
+- Banco de Dados: MySQL, BR Modelo e PostgreSQL
 - Ferramentas: Git e VS Code
 
 🧩 Conteúdo dos Projetórios
