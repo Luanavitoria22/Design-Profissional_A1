@@ -1,0 +1,468 @@
+<!DOCTYPE html> 
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Capital Digital Week</title>
+<style>
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e8eaff;
+    color: #222;
+}
+header {
+    background-color: #fff;
+    color: #050320;
+    padding: 30px 10px 10px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 80px;
+}
+
+header img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10%;
+    border: 5px solid #3f78be;
+    margin-bottom: 5px;
+}
+
+header h1 {
+    margin: 10px 0 0;
+    color: #1149cd;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #1e5fea;
+    padding: 12px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+nav ul {
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 18px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+nav ul li a:hover {
+    color: #ffde59;
+    border-bottom: 2px solid #ffde59;
+    padding-bottom: 3px;
+}
+main {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    color: #1149cd;
+    border-left: 5px solid #1149cd;
+    padding-left: 10px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table th, table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: #1149cd;
+    color: #fff;
+}
+#Palestrantes {
+    text-align: center;
+}
+
+.palestrantes-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.card {
+    background: #f8f9ff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 230px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    padding: 15px;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.card h3 {
+    color: #1149cd;
+    margin: 10px 0 5px;
+    font-size: 1.1rem;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: #333;
+}
+
+     <!-- Formulário -->
+
+form {
+    margin-top: 25 px;
+}
+
+fieldset {
+    border: 2px solid #1149cd;
+    border-radius: 11px;
+    padding: 25px 20px 30px;
+    background: #f8f9ff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+}
+
+legend {
+    color: #1149cd;
+    font-weight: bold;
+     font-size: 1.2rem;
+    padding: 0 10px;
+}
+
+label {
+    display: block;
+    margin-top: 13px;
+    font-weight: 600;
+    color: #222;
+}
+
+input {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1.5px solid #ccc;
+    background-color: #fff;
+    font-size: 1rem;
+    margin-top: 6px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+
+}
+input:focus {
+    border-color: #1149cd;
+    box-shadow: 0 0 5px rgba(17, 73, 205, 0.3);
+    outline: none;
+}
+input[type="date"],
+input[type="time"] {
+    width: 48%;
+    display: inline-block;
+}
+button {
+    display: inline-block;
+    width: 100%;
+    background-color: #1149cd;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #0d3ba2;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(17, 73, 205, 0.3);
+}
+/* Responsividade */
+@media (max-width: 600px) {
+    input[type="date"],
+    input[type="time"] {
+        width: 100%;
+        display: block;
+    }
+
+    fieldset {
+        padding: 20px 15px;
+    }
+
+    button {
+        font-size: 0.95rem;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 30px 10px;
+    background-color: #1149cd;
+    color: #fff;
+    margin-top: 50px;
+}
+
+footer a {
+    display: inline-block;
+    margin: 10px;
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+footer a img {
+    width: 30px;
+    height: 30px;
+}
+
+footer a:hover {
+    color: #ffde59;
+}
+
+footer p {
+    margin-top: 10px;
+    font-size: 0.9rem;
+
+}
+</style>
+</head>
+<body>
+<!-- Barra de navegação-->
+    <nav>
+        <ul>
+            <li><a href="#Sobre">Sobre</a></li>
+            <li><a href="#Agenda">Agenda</a></li>
+            <li><a href="#Palestrantes">Palestrantes</a></li>
+            <li><a href="#Inscrição">Inscrição</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <img src="Imagem do WhatsApp de 2025-10-01 à(s) 21.49.35_326cddb6.jpg" alt="center">
+        <h1>Capital Digital Week 2025!</h1>
+    </header>
+<!-- Conteúdo principal-->
+    <main>
+        <section id="Sobre">
+            <h2>Sobre</h2>
+            <p>A Capital Digital Week é organizada por profissionais apaixonados por tecnologia e inovação, unidos para criar uma experiência única de conhecimento, networking e oportunidades de negócios. 
+            Participe de um dos principais congressos de tecnologia de Brasília e conecte-se ao futuro.</p>
+            <p>A 2ª edição do Capital Digital Week irá ocorrer nos dias 10 e 11 de outubro das 09 às 21hs, no Museu Nacional da República. Entrada Franca.</p>
+        </section>
+
+        <section id="Agenda">
+            <h2>Agenda</h2>
+            <p><strong>Fique por dentro de tudo que acontecerá no CDW!</strong></p>
+ <!-- tabela -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Dia</th>
+                        <th>Horário</th>
+                        <th>Atividade</th>
+                        <th>Tema</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+            <td>1º Dia - Sexta-Feira (10/10/2025)</td>
+            <td> 09:00</td>
+            <td>Check-in.</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td> 09:30</td>
+            <td>Abertura</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td> 10:00 às 10:40</td>
+            <td>1º Palestra</td>
+            <td> "Transforme seu conhecimento em um negócio digital"</td>
+        </tr>
+         <tr>
+            <td></td>
+            <td> 10:40 às 11:20</td>
+            <td>2º Palestra</td>
+            <td> "A importância da oratória para os negócios em geral"</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td> 11:20 às 12:00</td>
+            <td>3º Palestra</td>
+            <td>"Habilidades para liderar uma equipe de vendas"</td>
+        </tr>
+         <tr>
+            <td></td>
+            <td> 12:00 às 13:00</td>
+            <td>Pausa para almoço</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td> 12:00 às 13:00</td>
+            <td>4º Palestra</td>
+            <td>“Como começar seu negócio de Criptomoedas com transparência.”</td>
+        </tr>
+        </tr>
+         <tr>
+            <td>2º dia - Sábado (11/10/2025)</td>
+            <td>09:00</td>
+            <td>Check-in</td>
+        </tr>
+<tr>
+            <td></td>
+            <td>09:30</td>
+            <td>Abertura</td>
+        </tr>
+         <tr>
+            <td></td>
+            <td> 10:00 às 10:40</td>
+            <td>1º Palestra</td>
+            <td>"Otimize seus conhecimentos de vendas e liderança"</td>
+        </tr>
+          <tr>
+            <td></td>
+            <td> 10:40 às 11:20</td>
+            <td>2º Palestra</td>
+            <td>"Um chá de tecnologia"</td>
+        </tr>
+         <tr>
+            <td></td>
+            <td> 11:20 às 12:00</td>
+            <td>3º Palestra</td>
+            <td>“Desbloqueio das 3 mentes.” </td>
+        </tr>
+         <tr>
+            <td></td>
+            <td> 12:00 às 13:00</td>
+            <td>Pausa para almoço</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td> 13:40 às 19:00</td>
+            <td>4º Palestra</td>
+            <td>"A hora das mulheres."</td>
+        </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="Palestrantes">
+            <h2>Palestrantes</h2>
+            <p>CDW reúne nomes em IA, vendas e liderança: Gnandi Moustafa Yanwo, Sandra Faraj, Aldo Henrique, Silvana Di Maio e muito mais. Conheça alguns dos nossos palestrantes.</p>
+            
+            <div class="palestrantes-grid">
+                <div class="card">
+                    <img src="whatsapp-image-2025-08-25-at-11.34.27-dWxL6zWwVKseXO3y.avif" alt="Gnandi Moustafa Yanwo">
+                    <h3>Gnandi Moustafa Yanwo</h3>
+                    <p>IA e Transformação Social</p>
+                </div>
+                <div class="card">
+                    <img src="whatsapp-image-2025-08-25-at-15.41.52-YbN46VXB4RFgNq6G.avif" alt="Sandra Faraj">
+                    <h3>Sandra Faraj</h3>
+                    <p>Subsecretária de Tecnologia</p>
+                </div>
+                <div class="card">
+                    <img src="whatsapp-image-2025-08-25-at-11.45.56-YKb8VX8a5zuR2MZ0.avif" alt="Aldo Henrique">
+                    <h3>Aldo Henrique</h3>
+                    <p>Doutor e Especialista em IA</p>
+                </div>
+                <div class="card">
+                    <img src="whatsapp-image-2025-08-25-at-15.54.02-dWxL6KGN20tMj4Xo.avif" alt="Silvana Di Maio">
+                    <h3>Silvana Di Maio</h3>
+                    <p>Estrategista Digital Multiempresária</p>
+                </div>
+            </div>
+        </section>
+ <!-- Formulário -->
+        <section id="Inscrição">
+            <h2>Inscrição</h2>
+            <form>
+                <fieldset>
+                    <legend>Informações do Participante</legend>
+                    <label>Nome:</label>
+                    <input type="text" required>
+                    <label>E-mail:</label>
+                    <input type="email" required>
+                    <label>CPF:</label>
+                    <input type="text" placeholder="000.000.000-00">
+                    <label>Telefone:</label>
+                    <input type="tel" placeholder="(99) 99999-9999" required>
+                    <label>Data:</label>
+                    <input type="date" required>
+                    <label>Hora:</label>
+                    <input type="time" required>
+                    <input type="Mensagem">
+                    <label>Mensagem:</label>
+<textarea id="mensagem" name="msg" rows="4" cols="50" placeholder="Escreva sua mensagem aqui..."></textarea>
+                    <button type="submit">Inscrever-se</button>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+    <div style="text-align: center;">
+     <img src="data.jpeg" alt="350" height="400" width="800">
+     </div>
+ <!-- Rodapé da página -->
+    <footer>
+        <a href="https://www.instagram.com/capitaldigitalweek/#" target="_blank">
+            <img src="2190364.png" alt="Instagram">
+            <p>Instagram</p>
+        </a>
+        <a href="https://www.facebook.com/capitaldigitalweekk" target="_blank">
+            <img src="20673.png" alt="Facebook">
+            <p>Facebook</p>
+        </a>
+         <div class="contact">
+      <h3>Contato</h3>
+      <p><strong>E-mail:</strong> contato@capitaldigitalweek.com.br</p>
+      <p><strong>Telefone:</strong> +55 (61) 99649-7178</p>
+    </div>
+        
+      
+        <p>&copy; 2025. Desenvolvido por <strong>Luana Vitória</strong> para a disciplina de Desenvolvimento Front-End Para Web.</p>
+    </footer>
+
+</body>
+</html>
