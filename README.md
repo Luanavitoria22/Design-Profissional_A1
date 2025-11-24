@@ -3,7 +3,7 @@ Aqui você encontrará aplicações, estudos e experimentos que desenvolvi nas �
 
 🚀 Tecnologias Utilizadas
 
--HTML5, CSS3, JavaScript
+- HTML5, CSS3, JavaScript
 - Banco de Dados: MySQL, PostgreSQL, MongoDB
 - Ferramentas: Git e VS Code
 
