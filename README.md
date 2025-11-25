@@ -43,8 +43,9 @@ Scripts SQL (PostgreSQL)
 
 Dicionários de dados
 
+
 Nome:Luana Vitoria Da Silva Pereira 
 
-LinkedIn: 
+Lattes:http://lattes.cnpq.br/3988703003167106
 
 GitHub:https://github.com/Luanavitoria22
